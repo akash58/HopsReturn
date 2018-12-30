@@ -34,14 +34,15 @@
                 <v-form>
                   <v-text-field append-icon="person" name="login" label="UserName/Email" type="text" v-model="model.username"></v-text-field>
                   <v-text-field append-icon="lock" name="password" label="Password" id="password" type="password" v-model="model.password"></v-text-field>
+                  <div class="body-1" align="center" @click="openForgotPwd.call(this)">Forgot Password?</div>
                 </v-form>
-                <div class="body-1" align="center">Forgot Password?</div>
               </v-card-text>
               <v-card-actions class="mt-1">
                 <v-btn block color="primary" @click="login" :loading="loadingLogin">Login</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn block color="white" @click="signup" :loading="loadingSignup">Signup</v-btn>
               </v-card-actions>
+              <ForgotPassword></ForgotPassword>
             <!-- </v-container> -->
           </v-content>
         </v-card>
@@ -75,7 +76,16 @@
         setTimeout(() => {
           this.$router.push('/signup')
         }, 1000)
+      },
+      openForgotPwd () {
+        this.forgotPwdDialog = true
+        this.$nuxt.$emit('forgotPasswordClick', {
+          forgotPwdDialog: this.forgotPwdDialog
+        })
       }
+    },
+    components: {
+      ForgotPassword: () => import('~/components/ForgotPassword')
     }
   }
 </script>
