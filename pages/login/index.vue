@@ -31,10 +31,10 @@
                   <h1 class="flex black--text">LOGIN</h1>
                   <h4 class="grey--text body-2 mt-1">Welcome back! Please login to your account</h4>
                 </div>                
-                <v-form>
+                <v-form class="text-xs-center">
                   <v-text-field append-icon="person" name="login" label="UserName/Email" type="text" v-model="model.username"></v-text-field>
                   <v-text-field append-icon="lock" name="password" label="Password" id="password" type="password" v-model="model.password"></v-text-field>
-                  <div class="body-1" align="center" @click="openForgotPwd.call(this)">Forgot Password?</div>
+                  <span class="body-1 hc" @click="openForgotPwd.call(this)">Forgot Password?</span>
                 </v-form>
               </v-card-text>
               <v-card-actions class="mt-1">
