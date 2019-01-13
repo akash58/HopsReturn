@@ -22,16 +22,7 @@
         </v-list>
       </no-ssr>
     </v-navigation-drawer> -->
-    <v-toolbar fixed app dense color="blue">
-      <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
-      <nuxt-link to="/" class="tdn">
-        <v-toolbar-title class="white--text" v-text="title"></v-toolbar-title>
-      </nuxt-link>
-      <v-spacer></v-spacer>
-      <nuxt-link to="/login" class="tdn" v-if="this.$route.path !== `/login` && this.$route.path !== `/signup` ">
-        <v-btn class="white--text subheading" flat>Login & Signup</v-btn>
-      </nuxt-link>
-    </v-toolbar>
+    <Header :title="title"/>
     <v-content>
       <!-- <v-container> -->
         <nuxt />
@@ -50,6 +41,9 @@
         fixed: false,
         title: 'HOPS'
       }
+    },
+    components: {
+      Header: () => import('~/components/MainHeader')
     }
   }
 </script>
