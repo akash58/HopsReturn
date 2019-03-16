@@ -371,7 +371,10 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
+<style scoped>
+.v-list{
+  padding: 0px 0 8px;
+}
 .pl55 {
   padding-left: 55px;
 }
