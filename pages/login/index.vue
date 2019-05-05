@@ -16,6 +16,7 @@
                   <li class="py-1">Stock Management.</li>
                   <li class="py-1">Game Management.</li>
                   <li class="py-1">Print Bills/Receipts.</li>
+                  <li class="py-1">Print Bills/Receipts.</li>
                 </ul>
               </v-container>
             </v-content>
